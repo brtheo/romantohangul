@@ -1,0 +1,14 @@
+{
+ "manifest_version": 2, // Indique la version du manifest (toujours 2)
+ "name": "roman to hangul", // Le nom de votre extension
+ "description": "romantohangul", // La description
+ "version": "1.0", // La version en en l'occurrence la première donc 1.0
+ "permissions": [ // Les permissions, on y reviendra plus bas
+  "http://*/*",
+  "https://*/*"
+ ],
+ "browser_action": {
+     "default_popup": "popup.html"
+ }
+
+}

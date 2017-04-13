@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <style>
+            /*
+            color1 : lemonchiffon
+            color1 : #3c7982 bleu foncé
+            color1 : #831f1a bordeau
+            color1 : #221e29 noir
+            color1 : #11c7c5 blezu clair
+
+            */
+            @import url('https://fonts.googleapis.com/css?family=Anton');
+            body{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: lemonchiffon;
+                color: #221e29;
+                font-family: "Anton";
+                font-size: 35px;
+                margin:0;
+                padding:0;
+            }
+            body > * {
+                margin:0;
+                padding:0;
+            }
+            .app {
+                position: relative;
+                height: 70%;
+                width: 70%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                color:    #11c7c5;
+                text-align: center;
+                font-size: 1em;
+            }
+            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    #11c7c5;
+            opacity:  1;
+            text-align: center;
+            }
+            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    #11c7c5;
+            opacity:  1;
+text-align: center;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:    #11c7c5;
+text-align: center;
+            }
+
+            textarea.input {
+                border: none;
+                overflow: auto;
+                outline: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                display: flex;
+                flex-direction: left;
+                align-items: center;
+                width: 100%;
+                max-width: inherit;
+                height: 35%;
+                padding: 10px;
+                resize: none;
+                font-size: 35px;
+                font-family: "Anton";
+                background: #221e29;
+                color: lemonchiffon;
+
+            }
+            textarea.input#hangul_output {
+                margin-top: 50px;
+            }
+            .focusguard {
+                width: 0px; height: 0px;
+                position: relative; top:0; left:0;
+                display:flex;
+            }
+        </style>  
+        <script async src="js/hangul.js"></script>
+        <script async src="js/app.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <div class="focusguard" id="focusguard-1" tabindex="1"></div>
+            <textarea class="input" id="roman_input" tabindex="2"  placeholder="Romanization"></textarea>
+            <textarea class="input" id="hangul_output" tabindex="3" placeholder="Hangul"></textarea>
+            <div class="focusguard" id="focusguard-2" tabindex="4"></div>
+        </div>
+        <!--<sctipt src="js/prototype.js" type="text/javascript"></sctipt>-->
+    </body>
+</html>
