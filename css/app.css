@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #221e29;
+    font-family: "Anton";
+    font-size: 35px;
+    margin:0;
+    padding:0;
+}
+body > * {
+    margin:0;
+    padding:0;
+}
+.app {
+    position: relative;
+    height: inherit;
+    width: inherit;
+}
+::-webkit-input-placeholder {
+    color:    #11c7c5;
+    text-align: center;
+    line-height: 11em;
+}
+:-moz-placeholder { 
+    color:    #11c7c5;
+    text-align: center;
+    line-height: 11em;
+}
+::-moz-placeholder { 
+    color:    #11c7c5;
+    text-align: center;
+    line-height: 11em;     
+}
+:-ms-input-placeholder { 
+    color:    #11c7c5;
+    text-align: center;
+    line-height: 11em;
+}
+#hangul_output::-webkit-input-placeholder {
+    color: #831f1a;
+    font-family: "Anton";
+}
+#hangul_output:-moz-placeholder {
+    color: #831f1a;
+    font-family: "Anton";
+}
+#hangul_output::-moz-placeholder {
+    color: #831f1a;
+    font-family: "Anton";
+}
+#hangul_output:-ms-input-placeholder {
+    color: #831f1a;
+    font-family: "Anton";
+}
+textarea.input {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    max-width: inherit;
+    height: 50%;
+    padding: 10px;
+    resize: none;
+    font-size: 35px;
+    font-family: "Anton";
+    background: #221e29;
+    color: lemonchiffon;
+}
+#hangul_output{
+    background: lemonchiffon;
+    color: #221e29;
+    font-weight: bold;
+}

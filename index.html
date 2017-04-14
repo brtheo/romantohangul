@@ -9,8 +9,8 @@
             color1 : #11c7c5 blezu clair
 
             */
-            @import url('https://fonts.googleapis.com/css?family=Anton');
-            body{
+           /* @import url('https://fonts.googleapis.com/css?family=Anton');
+            body {
                 position: absolute;
                 height: 100%;
                 width: 100%;
@@ -26,27 +26,44 @@
             }
             .app {
                 position: relative;
-                height: 70%;
-                width: 70%;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%,-50%);
+                height: inherit;
+                width: inherit;
             }
-            ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            ::-webkit-input-placeholder {
                 color:    #11c7c5;
-                opacity:  0.5;
+                text-align: center;
+                line-height: 11em;
             }
-            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            :-moz-placeholder { 
                 color:    #11c7c5;
-                opacity:  0.5;
+                text-align: center;
+                line-height: 11em;
             }
-            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            ::-moz-placeholder { 
                 color:    #11c7c5;
-                opacity:  0.5;     
+                text-align: center;
+                line-height: 11em;     
             }
-            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            :-ms-input-placeholder { 
                 color:    #11c7c5;
-                opacity:  0.5;
+                text-align: center;
+                line-height: 11em;
+            }
+            #hangul_output::-webkit-input-placeholder {
+                color: #831f1a;
+                font-family: "Anton";
+            }
+            #hangul_output:-moz-placeholder {
+                color: #831f1a;
+                font-family: "Anton";
+            }
+            #hangul_output::-moz-placeholder {
+                color: #831f1a;
+                font-family: "Anton";
+            }
+            #hangul_output:-ms-input-placeholder {
+                color: #831f1a;
+                font-family: "Anton";
             }
             textarea.input {
                 border: none;
@@ -55,9 +72,6 @@
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
                 box-shadow: none;
-                display: flex;
-                flex-direction: left;
-                align-items: center;
                 width: 100%;
                 max-width: inherit;
                 height: 50%;
@@ -67,21 +81,21 @@
                 font-family: "Anton";
                 background: #221e29;
                 color: lemonchiffon;
-
             }
-            .focusguard {
-                width: 0px; height: 0px;
-                position: relative; top:0; left:0;
-                display:flex;
-            }
+            #hangul_output{
+                background: lemonchiffon;
+                color: #221e29;
+                font-weight: bold;
+            }*/
         </style>  
+        <link rel="stylesheet" href="css/app.css">
         <script async src="js/hangul.js"></script>
         <script async src="js/app.js"></script>
     </head>
     <body>
         <div class="app">
             <div class="focusguard" id="focusguard-1" tabindex="1"></div>
-            <textarea class="input" id="roman_input" tabindex="2"  placeholder="Romanization"></textarea>
+            <textarea class="input" id="roman_input" tabindex="2"  placeholder="Romanization - ctrl+shift => copy hangul to Google translate"></textarea>
             <textarea class="input" id="hangul_output" tabindex="3" placeholder="Hangul"></textarea>
             <div class="focusguard" id="focusguard-2" tabindex="4"></div>
         </div>

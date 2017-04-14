@@ -2,19 +2,20 @@
 //var HANGUL_DICTIONARY = require('./hangul.js' )
 
 
-var romanInput = document.querySelector('#roman_input')
-var hangulOutput = document.querySelector('#hangul_output')
-var focusGuard1 = document.querySelector('#focusguard-1')
-var focusGuard2 = document.querySelector('#focusguard-2')
+let romanInput = document.querySelector('#roman_input'),
+    hangulOutput = document.querySelector('#hangul_output'),
+    focusGuard1 = document.querySelector('#focusguard-1'),
+    focusGuard2 = document.querySelector('#focusguard-2'),
+    pressedKeys = []
 
 function convert(roman) {
-    var hangul = []
-    var node = HANGUL_DICTIONARY
+    let hangul = [],
+        node = HANGUL_DICTIONARY
 
 
-    for (var i = roman.length - 1; i >= 0; --i) {
-    var r = roman[i].toUpperCase()
-    var next = node[r]
+    for (let i = roman.length - 1; i >= 0; --i) {
+    let r = roman[i].toUpperCase()
+    let next = node[r]
     if (!next && node["$"]) {
         hangul.push(node["$"])
         next = HANGUL_DICTIONARY[r]
@@ -30,9 +31,10 @@ function convert(roman) {
 }
 
 
-function onRomanChanged() {
-    var hangul = convert(romanInput.value)
-    hangulOutput.value = hangul 
+function onRomanChanged(e) {
+    pressedKeys = []
+    let hangul = convert(romanInput.value)
+    hangulOutput.value = romanInput.value == "/?" ? "ctrl+shift => copy hangul to Google translate" : hangul 
 }
 
 function tabAutoCopy() {
@@ -42,34 +44,18 @@ function tabAutoCopy() {
         hangulOutput.select()
         document.execCommand('copy')
     })
-
-
-    /*hangulOutput.addEventListener('keyup', e => {
-        var tap = 0
-        if (e.which == 9) {
-            if(tap == 0){
-                hangulOutput.select()
-                document.execCommand('copy')
-                tap++
-                console.log(tap)
-            }
-            else {
-                romanInput.select()
-                tap = 0
-                console.log(tap)
-            }
-        }
-    })*/
-    /*hangulOutput.addEventListener('keyup', e => {
-        if (e.which == 9) {
-            romanInput.focus()
-        }
-    })*/
 }
 
 window.addEventListener('load', _ => {
     onRomanChanged()
-    romanInput.addEventListener('input', onRomanChanged)
+    romanInput.addEventListener('keyup', onRomanChanged)
+    romanInput.addEventListener('keydown', e => {
+        pressedKeys.push(e.keyCode)
+        if(pressedKeys[0] == 17 && pressedKeys[1] == 16) {
+            pressedKeys = []
+            window.open(`https://translate.google.com/?hl=en#ko/en/${hangulOutput.value}`)
+        }
+    })
     tabAutoCopy()
 })
     
