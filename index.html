@@ -34,24 +34,20 @@
             }
             ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
                 color:    #11c7c5;
-                text-align: center;
-                font-size: 1em;
+                opacity:  0.5;
             }
             :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-            color:    #11c7c5;
-            opacity:  1;
-            text-align: center;
+                color:    #11c7c5;
+                opacity:  0.5;
             }
             ::-moz-placeholder { /* Mozilla Firefox 19+ */
-            color:    #11c7c5;
-            opacity:  1;
-text-align: center;
+                color:    #11c7c5;
+                opacity:  0.5;     
             }
             :-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color:    #11c7c5;
-text-align: center;
+                color:    #11c7c5;
+                opacity:  0.5;
             }
-
             textarea.input {
                 border: none;
                 overflow: auto;
@@ -64,7 +60,7 @@ text-align: center;
                 align-items: center;
                 width: 100%;
                 max-width: inherit;
-                height: 35%;
+                height: 50%;
                 padding: 10px;
                 resize: none;
                 font-size: 35px;
@@ -72,9 +68,6 @@ text-align: center;
                 background: #221e29;
                 color: lemonchiffon;
 
-            }
-            textarea.input#hangul_output {
-                margin-top: 50px;
             }
             .focusguard {
                 width: 0px; height: 0px;
