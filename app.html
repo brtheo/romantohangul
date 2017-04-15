@@ -1,0 +1,17 @@
+<template>
+    <div class="focusguard" id="focusguard-1" tabindex="1"></div>
+    <textarea class="input" id="roman_input" tabindex="2"  placeholder="Romanization - /? to help"></textarea>
+    <textarea class="input" id="hangul_output" tabindex="3" placeholder="Hangul"></textarea>
+    <div class="focusguard" id="focusguard-2" tabindex="4"></div>
+    <aside id="command">
+        <button id="copy_gt"class="icon" title="copy hangul to Google translate">
+            <svg><use xlink:href="css/icons.svg#md-translate"></use></svg>
+        </button>
+        <button id="copy_clipboard"class="icon" title="copy to clipboard">
+            <svg><use xlink:href="css/icons.svg#md-copy"></use></svg>
+        </button>
+    </aside>
+    <link rel="stylesheet" href="css/app.css">
+    <script async src="js/hangul.js"></script>
+    <script async src="js/app.js"></script>
+</template>

@@ -6,6 +6,8 @@ let romanInput = document.querySelector('#roman_input'),
     hangulOutput = document.querySelector('#hangul_output'),
     focusGuard1 = document.querySelector('#focusguard-1'),
     focusGuard2 = document.querySelector('#focusguard-2'),
+    copyGT = document.querySelector('#copy_gt'),
+    copyClipboard = document.querySelector('#copy_clipboard'),
     pressedKeys = []
 
 function convert(roman) {
@@ -34,17 +36,20 @@ function convert(roman) {
 function onRomanChanged(e) {
     pressedKeys = []
     let hangul = convert(romanInput.value)
-    hangulOutput.value = romanInput.value == "/?" ? "ctrl+shift => copy hangul to Google translate" : hangul 
+    hangulOutput.value = romanInput.value == "/?" ? `ctrl+shift : copy hangul to Google translate \ntab : copy hangul to clipboard \noriginal script : http://gimite.net/roman2hangul/` : hangul 
+}
+
+function copyToClipboard() {
+    hangulOutput.select()
+    document.execCommand('copy')
 }
 
 function tabAutoCopy() {
     focusGuard1.addEventListener('focus', _ => hangulOutput.focus())
     focusGuard2.addEventListener('focus', _ => romanInput.focus())
-    hangulOutput.addEventListener('focus', _ => {
-        hangulOutput.select()
-        document.execCommand('copy')
-    })
+    hangulOutput.addEventListener('focus', copyToClipboard)
 }
+
 
 window.addEventListener('load', _ => {
     onRomanChanged()
@@ -57,5 +62,7 @@ window.addEventListener('load', _ => {
         }
     })
     tabAutoCopy()
+    copyGT.addEventListener('click', _ => window.open(`https://translate.google.com/?hl=en#ko/en/${hangulOutput.value}`))
+    copyClipboard.addEventListener('click', copyToClipboard)
 })
     

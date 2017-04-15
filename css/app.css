@@ -1,3 +1,9 @@
+/*color1 : lemonchiffon
+color1 : #3c7982 bleu foncé
+color1 : #831f1a bordeau
+color1 : #221e29 noir
+color1 : #11c7c5 blezu clair*/
+            
 @import url('https://fonts.googleapis.com/css?family=Anton');
 body {
     position: absolute;
@@ -12,8 +18,9 @@ body {
 body > * {
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
-.app {
+#app {
     position: relative;
     height: inherit;
     width: inherit;
@@ -75,4 +82,69 @@ textarea.input {
     background: lemonchiffon;
     color: #221e29;
     font-weight: bold;
+}
+#command {
+      position: absolute;
+      right: 15;
+      bottom: 15;
+      display: flex;
+}
+button { cursor: pointer;}
+button:focus {outline:0;}
+button.icon {
+    border: 0px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 20px solid #ebebeb;
+    transition: border 0.2s;
+    background: white;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
+}
+button.icon:last-child {
+    margin-left: 5px;
+}
+svg {
+    height: 36px;
+    width: 36px;
+    fill: #303030;
+    transform: translateY(3px);
+    
+}
+button.icon:hover {
+    border: 3px solid #a6e425;
+}
+button.icon:hover  svg {
+    transform: translateY(0px);
+    transition: 0.4s ease-in transform;
+}
+@media (max-width: 600px) {
+    body{
+        height: 400px;
+        width: 500px;
+        position: initial;
+        background: transparent;
+    }
+    textarea.input {
+        height: 45%;
+    }
+    ::-webkit-input-placeholder {
+        line-height: 2em;
+    }
+    :-moz-placeholder { 
+        line-height: 2em;
+    }
+    ::-moz-placeholder { 
+        line-height: 2em;     
+    }
+    :-ms-input-placeholder { 
+        line-height: 2em;
+    }
+    #command {
+        right: 2;
+        bottom: 2;
+    }
 }
