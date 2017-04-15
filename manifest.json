@@ -1,14 +1,16 @@
 {
- "manifest_version": 2, // Indique la version du manifest (toujours 2)
- "name": "roman to hangul", // Le nom de votre extension
- "description": "romantohangul", // La description
- "version": "1.0", // La version en en l'occurrence la première donc 1.0
- "permissions": [ // Les permissions, on y reviendra plus bas
+ "manifest_version": 2, 
+ "name": "roman to hangul",
+ "description": "roman to hangul", 
+ "version": "1.0", 
+ "permissions": [ 
   "http://*/*",
   "https://*/*"
  ],
  "browser_action": {
      "default_popup": "popup.html"
+ },
+ "icons": { 
+  "128" : "chrome_ext_icon.png"
  }
-
 }
