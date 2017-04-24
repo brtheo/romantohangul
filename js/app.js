@@ -1,12 +1,18 @@
 
 //var HANGUL_DICTIONARY = require('./hangul.js' )
-
-
+const USR_LANG = navigator.language || navigator.userLanguage
+let url = {
+    web: `https://www.google.com/search?q=`,
+    gt: `https://translate.google.com/?hl=${USR_LANG}#ko/${USR_LANG}/`,
+    dictionary: `https://glosbe.com/ko/${USR_LANG}/`
+}
 let romanInput = document.querySelector('#roman_input'),
     hangulOutput = document.querySelector('#hangul_output'),
     focusGuard1 = document.querySelector('#focusguard-1'),
     focusGuard2 = document.querySelector('#focusguard-2'),
-    copyGT = document.querySelector('#copy_gt'),
+    searchWeb = document.querySelector('#search_web'),
+    searchGT = document.querySelector('#search_gt'),
+    searchDictionary = document.querySelector('#search_dictionary'),
     copyClipboard = document.querySelector('#copy_clipboard'),
     pressedKeys = []
 
@@ -58,11 +64,13 @@ window.addEventListener('load', _ => {
         pressedKeys.push(e.keyCode)
         if(pressedKeys[0] == 17 && pressedKeys[1] == 16) {
             pressedKeys = []
-            window.open(`https://translate.google.com/?hl=en#ko/en/${hangulOutput.value}`)
+            window.open(url.gt+hangulOutput.value)
         }
     })
     tabAutoCopy()
-    copyGT.addEventListener('click', _ => window.open(`https://translate.google.com/?hl=en#ko/en/${hangulOutput.value}`))
+    searchWeb.addEventListener('click', _ => window.open(url.web+hangulOutput.value))
+    searchGT.addEventListener('click', _ => window.open(url.gt+hangulOutput.value))
+    searchDictionary.addEventListener('click', _ => window.open(url.dictionary+hangulOutput.value))
     copyClipboard.addEventListener('click', copyToClipboard)
 })
     
