@@ -11,9 +11,10 @@ body {
     width: 100%;
     background: #221e29;
     font-family: "Anton";
-    font-size: 35px;
+    font-size: 27px;
     margin:0;
     padding:0;
+    overflow-y: hidden;
 }
 body > * {
     margin:0;
@@ -70,7 +71,7 @@ textarea.input {
     box-shadow: none;
     width: 100%;
     max-width: inherit;
-    height: 50%;
+    height: 33.33%;
     padding: 10px;
     resize: none;
     font-size: 35px;
@@ -120,6 +121,14 @@ button.icon:hover {
 button.icon:hover  svg {
     transform: translateY(0px);
     transition: 0.4s ease-in transform;
+}
+#legal {
+    position: absolute;
+    bottom: 10;
+    left: 10;
+    font-size: 10px;
+    font-family: sans-serif;
+    color: #e0e0e0;
 }
 @media (max-width: 600px) {
     body{
