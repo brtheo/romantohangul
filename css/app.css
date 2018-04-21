@@ -132,7 +132,7 @@ button.icon:hover  svg {
 }
 @media (max-width: 600px) {
     body{
-        height: 400px;
+        height: 445px;
         width: 500px;
         position: initial;
         background: transparent;
