@@ -1,4 +1,4 @@
 # romantohangul
 
-![first screen](screenshots/01.PNG)
-![conversion screen](screenshots/02.PNG) 
+![first screen](screenshots/1.PNG)
+![conversion screen](screenshots/2.PNG) 
